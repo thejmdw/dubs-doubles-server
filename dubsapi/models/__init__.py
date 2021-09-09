@@ -1,5 +1,6 @@
 from .customer import Customer
 from .payment import Payment
+from .order import Order
 from .product import Product
 from .producttype import ProductType
 from .topping import Topping
