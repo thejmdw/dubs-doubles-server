@@ -9,7 +9,7 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "buds",
+            "name": "dubs",
             "database": "db.sqlite3"
         }
     ],

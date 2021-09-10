@@ -1,0 +1,227 @@
+[
+    {
+        "model": "dubsapi.topping",
+        "pk": 1,
+        "fields": {
+            "name": "Beef Patty",
+            "price": 4.00,
+            "topping_type_id": 1
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 2,
+        "fields": {
+            "name": "Beyond Patty",
+            "price": 5.50,
+            "topping_type_id": 1
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 3,
+        "fields": {
+            "name": "Ketchup",
+            "price": 0.00,
+            "topping_type_id": 2
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 4,
+        "fields": {
+            "name": "Mustard",
+            "price": 0.00,
+            "topping_type_id": 2
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 5,
+        "fields": {
+            "name": "Mayo",
+            "price": 0.00,
+            "topping_type_id": 2
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 6,
+        "fields": {
+            "name": "Gulden's Spicy Brown Mustard",
+            "price": 0.00,
+            "topping_type_id": 2
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 7,
+        "fields": {
+            "name": "Mayo",
+            "price": 0.00,
+            "topping_type_id": 2
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 8,
+        "fields": {
+            "name": "Gifford's Bacon",
+            "price": 1.00,
+            "topping_type_id": 1
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 9,
+        "fields": {
+            "name": "Benton's Bacon",
+            "price": 1.50,
+            "topping_type_id": 1
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 10,
+        "fields": {
+            "name": "Benton's Bacon",
+            "price": 1.50,
+            "topping_type_id": 1
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 11,
+        "fields": {
+            "name": "Butter Lettuce",
+            "price": 0.25,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 12,
+        "fields": {
+            "name": "Chopped White Onion",
+            "price": 0.25,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 13,
+        "fields": {
+            "name": "Sliced Red Onion",
+            "price": 0.25,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 14,
+        "fields": {
+            "name": "Sliced White Onion",
+            "price": 0.25,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 15,
+        "fields": {
+            "name": "Pickles",
+            "price": 0.25,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 16,
+        "fields": {
+            "name": "Hatch Chilies",
+            "price": 0.50,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 17,
+        "fields": {
+            "name": "Tomato",
+            "price": 0.50,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 18,
+        "fields": {
+            "name": "Avocado",
+            "price": 1.00,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 19,
+        "fields": {
+            "name": "Jalapeno",
+            "price": 0.25,
+            "topping_type_id": 3
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 20,
+        "fields": {
+            "name": "American",
+            "price": 0.75,
+            "topping_type_id": 4
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 21,
+        "fields": {
+            "name": "Cheddar",
+            "price": 1.00,
+            "topping_type_id": 4
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 22,
+        "fields": {
+            "name": "Gouda",
+            "price": 1.00,
+            "topping_type_id": 4
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 23,
+        "fields": {
+            "name": "Pimento",
+            "price": 1.00,
+            "topping_type_id": 4
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 24,
+        "fields": {
+            "name": "Havarti",
+            "price": 1.00,
+            "topping_type_id": 4
+        }
+    },
+    {
+        "model": "dubsapi.topping",
+        "pk": 25,
+        "fields": {
+            "name": "Queso",
+            "price": 1.00,
+            "topping_type_id": 4
+        }
+    }
+]

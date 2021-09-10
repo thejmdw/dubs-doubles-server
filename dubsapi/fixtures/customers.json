@@ -1,0 +1,10 @@
+[
+    {
+        "model": "dubsapi.customer",
+        "pk": 1,
+        "fields": {
+            "phone_number": "987-654-3210",
+            "user_id": 2
+        }
+    }
+]

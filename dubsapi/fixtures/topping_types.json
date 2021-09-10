@@ -1,0 +1,30 @@
+[
+    {
+        "model": "dubsapi.toppingtype",
+        "pk": 1,
+        "fields": {
+            "name": "Proteins"
+        }
+    },
+    {
+        "model": "dubsapi.toppingtype",
+        "pk": 2,
+        "fields": {
+            "name": "Condiments"
+        }
+    },
+    {
+        "model": "dubsapi.toppingtype",
+        "pk": 3,
+        "fields": {
+            "name": "Veggies"
+        }
+    },
+    {
+        "model": "dubsapi.toppingtype",
+        "pk": 4,
+        "fields": {
+            "name": "Cheese"
+        }
+    }
+]
