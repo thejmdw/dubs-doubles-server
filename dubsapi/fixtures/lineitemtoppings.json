@@ -1,0 +1,74 @@
+[
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 1,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 1
+        }
+    },
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 2,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 2
+        }
+    },
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 3,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 4
+        }
+    },
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 4,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 5
+        }
+    },
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 5,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 8
+        }
+    },
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 6,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 9
+        }
+    },
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 7,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 12
+        }
+    },
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 8,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 13
+        }
+    },
+    {
+        "model": "dubsapi.lineitemtopping",
+        "pk": 9,
+        "fields": {
+            "line_item_id": 11,
+            "topping_id": 25
+        }
+    }
+]

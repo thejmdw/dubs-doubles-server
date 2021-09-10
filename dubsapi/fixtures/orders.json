@@ -3,7 +3,7 @@
         "model": "dubsapi.order",
         "pk": 1,
         "fields": {
-            "customer_id": 2,
+            "customer_id": 1,
             "payment_type_id": 1,
             "created_date": "2021-09-05"
         }
@@ -12,9 +12,18 @@
         "model": "dubsapi.order",
         "pk": 2,
         "fields": {
-            "customer_id": 2,
+            "customer_id": 1,
             "payment_type_id": 2,
-            "created_date": "2021-09-064"
+            "created_date": "2021-09-06"
+        }
+    },
+    {
+        "model": "dubsapi.order",
+        "pk": 3,
+        "fields": {
+            "customer_id": 1,
+            "payment_type_id": 2,
+            "created_date": "2021-09-06"
         }
     }
 ]
