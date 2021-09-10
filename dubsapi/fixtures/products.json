@@ -274,5 +274,53 @@
             "product_type_id": 3,
             "quantity": 0
         }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 24,
+        "fields": {
+            "name": "The BYOBurger",
+            "price": 0.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 1,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 25,
+        "fields": {
+            "name": "The BYOBurger",
+            "price": 0.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 26,
+        "fields": {
+            "name": "The BYOBurger",
+            "price": 0.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 27,
+        "fields": {
+            "name": "The BYOBurger",
+            "price": 0.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
     }
 ]
