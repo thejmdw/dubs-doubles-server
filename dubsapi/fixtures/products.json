@@ -1,0 +1,278 @@
+[
+    {
+        "model": "dubsapi.product",
+        "pk": 1,
+        "fields": {
+            "name": "The Classic",
+            "price": 10.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 1,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 2,
+        "fields": {
+            "name": "The Rodeo",
+            "price": 10.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 1,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 3,
+        "fields": {
+            "name": "The Stranger",
+            "price": 10.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 1,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 4,
+        "fields": {
+            "name": "The Beyond Classic",
+            "price": 12.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 1,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 5,
+        "fields": {
+            "name": "The Main Street",
+            "price": 10.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 1,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 6,
+        "fields": {
+            "name": "Crinkle Cut Fries",
+            "price": 3.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 2,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 7,
+        "fields": {
+            "name": "Tater Tots",
+            "price": 3.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 2,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 8,
+        "fields": {
+            "name": "Onion Rings",
+            "price": 4.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 2,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 9,
+        "fields": {
+            "name": "The Classic Fries",
+            "price": 12.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 10,
+        "fields": {
+            "name": "The Classic Tots",
+            "price": 12.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 11,
+        "fields": {
+            "name": "The Classic Rings",
+            "price": 14.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 12,
+        "fields": {
+            "name": "The Rodeo Fries",
+            "price": 12.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 13,
+        "fields": {
+            "name": "The Rodeo Tots",
+            "price": 12.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 14,
+        "fields": {
+            "name": "The Rodeo Rings",
+            "price": 14.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 15,
+        "fields": {
+            "name": "The Stranger Fries",
+            "price": 12.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 16,
+        "fields": {
+            "name": "The Stranger Tots",
+            "price": 12.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 17,
+        "fields": {
+            "name": "The Stranger Rings",
+            "price": 14.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 18,
+        "fields": {
+            "name": "The Beyond Classic Fries",
+            "price": 14.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 19,
+        "fields": {
+            "name": "The Beyond Classic Tots",
+            "price": 14.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 20,
+        "fields": {
+            "name": "The Beyond Classic Rings",
+            "price": 15.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 21,
+        "fields": {
+            "name": "The Main Street Fries",
+            "price": 12.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 22,
+        "fields": {
+            "name": "The Main Street Tots",
+            "price": 12.50,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 23,
+        "fields": {
+            "name": "The Main Street Rings",
+            "price": 14.00,
+            "description": "",
+            "image_url": "",
+            "product_type_id": 3,
+            "quantity": 0
+        }
+    }
+]

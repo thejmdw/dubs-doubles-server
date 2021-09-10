@@ -1,0 +1,23 @@
+[
+    {
+        "model": "dubsapi.producttype",
+        "pk": 1,
+        "fields": {
+            "name": "Burgers"
+        }
+    },
+    {
+        "model": "dubsapi.producttype",
+        "pk": 2,
+        "fields": {
+            "name": "Fries"
+        }
+    },
+    {
+        "model": "dubsapi.producttype",
+        "pk": 3,
+        "fields": {
+            "name": "Combos"
+        }
+    }
+]
