@@ -56,7 +56,7 @@ def register_user(request):
 
     # Now save the extra info in the dubsapi_gamer table
     customer = Customer.objects.create(
-        customer=request.data['phoneNumber'],
+        phone_number=request.data['phone_number'],
         user=new_user
     )
 
