@@ -16,9 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from dubsapi.views import register_user, login_user
+from dubsapi.views import register_user, login_user, Customers, Orders, Products, ProductTypes, LineItems, Payments, Users
+from rest_framework import routers
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'products', Products, 'product')
+router.register(r'producttypes', ProductTypes, 'producttype')
+router.register(r'lineitems', LineItems, 'orderproduct')
+router.register(r'customers', Customers, 'customer')
+router.register(r'users', Users, 'user')
+router.register(r'orders', Orders, 'order')
+# router.register(r'cart', Cart, 'cart')
+router.register(r'paymenttypes', Payments, 'payment')
+# router.register(r'profile', Profile, 'profile')
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('register', register_user),
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
