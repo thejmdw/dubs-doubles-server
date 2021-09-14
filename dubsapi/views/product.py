@@ -256,7 +256,7 @@ class Products(ViewSet):
         products = Product.objects.all()
 
         # Support filtering by category and/or quantity
-        category = self.request.query_params.get('category', None)
+        product_type = self.request.query_params.get('product_type', None)
         quantity = self.request.query_params.get('quantity', None)
         order = self.request.query_params.get('order_by', None)
         direction = self.request.query_params.get('direction', None)
@@ -274,8 +274,8 @@ class Products(ViewSet):
 
             products = products.order_by(order_filter)
 
-        if category is not None:
-            products = products.filter(category__id=category)
+        if product_type is not None:
+            products = products.filter(product_type__id=product_type)
 
         if quantity is not None:
             products = products.order_by("-created_date")[:int(quantity)]
