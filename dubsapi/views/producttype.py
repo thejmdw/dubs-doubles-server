@@ -1,6 +1,6 @@
 """
    Author: Daniel Krusch
-   Purpose: To convert product category data to json
+   Purpose: To convert product type data to json
    Methods: GET, POST
 """
 
@@ -15,7 +15,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 class ProductTypeSerializer(serializers.HyperlinkedModelSerializer):
-    """JSON serializer for product category"""
+    """JSON serializer for product type"""
     class Meta:
         model = ProductType
         url = serializers.HyperlinkedIdentityField(
@@ -33,28 +33,51 @@ class ProductTypes(ViewSet):
         """Handle POST operations
 
         Returns:
-            Response -- JSON serialized product category instance
+            Response -- JSON serialized product type instance
         """
-        new_product_category = ProductType()
-        new_product_category.name = request.data["name"]
-        new_product_category.save()
+        new_product_type = ProductType()
+        new_product_type.name = request.data["name"]
+        new_product_type.save()
 
-        serializer = ProductTypeSerializer(new_product_category, context={'request': request})
+        serializer = ProductTypeSerializer(new_product_type, context={'request': request})
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+    def update(self, request, pk=None):
+        """
+        @api {PUT} /products/:id PUT changes to product
+        @apiName UpdateProduct
+        @apiGroup Product
+
+        @apiHeader {String} Authorization Auth token
+        @apiHeaderExample {String} Authorization
+            Token 9ba45f09651c5b0c404f37a2d2572c026c146611
+
+        @apiParam {id} id Product Id to update
+        @apiSuccessExample {json} Success
+            HTTP/1.1 204 No Content
+        """
+        
+
+
+        product_type = ProductType.objects.get(pk=pk)
+        product_type.name = request.data["name"]
+        product_type.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
+
     def retrieve(self, request, pk=None):
-        """Handle GET requests for single category"""
+        """Handle GET requests for single type"""
         try:
-            category = ProductType.objects.get(pk=pk)
-            serializer = ProductTypeSerializer(category, context={'request': request})
+            type = ProductType.objects.get(pk=pk)
+            serializer = ProductTypeSerializer(type, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
 
     def list(self, request):
         """Handle GET requests to ProductType resource"""
-        product_category = ProductType.objects.all()
+        product_type = ProductType.objects.all()
 
         # Support filtering ProductTypes by area id
         # name = self.request.query_params.get('name', None)
@@ -62,6 +85,31 @@ class ProductTypes(ViewSet):
         #     ProductCategories = ProductCategories.filter(name=name)
 
         serializer = ProductTypeSerializer(
-            product_category, many=True, context={'request': request})
+            product_type, many=True, context={'request': request})
         return Response(serializer.data)
 
+    def destroy(self, request, pk=None):
+        """
+        @api {DELETE} /products/:id DELETE product
+        @apiName DeleteProduct
+        @apiGroup Product
+
+        @apiHeader {String} Authorization Auth token
+        @apiHeaderExample {String} Authorization
+            Token 9ba45f09651c5b0c404f37a2d2572c026c146611
+
+        @apiParam {id} id Product Id to delete
+        @apiSuccessExample {json} Success
+            HTTP/1.1 204 No Content
+        """
+        try:
+            product_type = ProductType.objects.get(pk=pk)
+            product_type.delete()
+
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+        except ProductType.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
