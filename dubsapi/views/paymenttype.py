@@ -20,7 +20,7 @@ class PaymentSerializer(serializers.HyperlinkedModelSerializer):
             lookup_field='id'
         )
         fields = ('id', 'url', 'merchant_name', 'account_number',
-                  'expiration_date', 'create_date', 'customer_id')
+                  'expiration_date', 'created_on', 'customer_id')
 
 
 class Payments(ViewSet):
@@ -34,7 +34,7 @@ class Payments(ViewSet):
         new_payment = Payment()
         new_payment.merchant_name = request.data["merchant_name"]
         new_payment.account_number = request.data["account_number"]
-        new_payment.create_date = request.data["create_date"]
+        # new_payment.created_on = request.data["created_on"]
         new_payment.expiration_date= request.data["expiration_date"]
         customer = Customer.objects.get(user=request.auth.user)
         new_payment.customer = customer
@@ -51,12 +51,12 @@ class Payments(ViewSet):
         Returns:
             Response -- JSON serialized payment_type instance
         """
-        customer_id = Customer.objects.get(id=request.auth.user_id)
         try:
+            customer_id = Customer.objects.get(user_id=request.auth.user_id)
             payment_type = Payment.objects.get(pk=pk)
             serializer = PaymentSerializer(
                 payment_type, context={'request': request})
-            if payment_type.customer_id == customer_id:
+            if payment_type.customer == customer_id:
                 return Response(serializer.data)
         except Payment.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
