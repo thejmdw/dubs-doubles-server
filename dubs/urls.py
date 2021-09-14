@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from dubsapi.views import register_user, login_user, Customers, Orders, Products
+from dubsapi.views import register_user, login_user, Customers, Orders, Products, Toppings
 from dubsapi.views import ProductTypes, LineItems, Payments, Users, Cart, Profile, ToppingTypes
 from rest_framework import routers
 
@@ -31,6 +31,7 @@ router.register(r'cart', Cart, 'cart')
 router.register(r'paymenttypes', Payments, 'payment')
 router.register(r'profile', Profile, 'profile')
 router.register(r'toppingtypes', ToppingTypes, 'toppingtype')
+router.register(r'toppings', Toppings, 'topping')
 
 urlpatterns = [
     path('', include(router.urls)),
