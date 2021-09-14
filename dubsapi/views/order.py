@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework.decorators import action
 from dubsapi.models import Order, Payment, Customer, Product, LineItem
 from .product import ProductSerializer
+from django.contrib.auth.models import User
 
 
 class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
@@ -24,10 +25,37 @@ class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'product')
         depth = 1
 
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    """JSON serializer for customer profile
+
+    Arguments:
+        serializers
+    """
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+        depth = 1
+
+class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+    """"""
+
+    user = UserSerializer(many=False)
+
+    class Meta:
+        model = Customer
+        url = serializers.HyperlinkedIdentityField(
+            view_name='customer',
+            lookup_field='id'
+        )
+        fields = ('id', 'user')
+        depth = 1
+
+
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for customer orders"""
 
     lineitems = OrderLineItemSerializer(many=True)
+    customer = CustomerSerializer(many=False)
 
     class Meta:
         model = Order
