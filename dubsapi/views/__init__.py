@@ -4,6 +4,7 @@ from .order import Orders
 from .paymenttype import Payments
 from .product import Products
 from .producttype import ProductTypes
+from .toppingtype import ToppingTypes
 from .customer import Customers
 from .lineitem import LineItems
 from .user import Users
