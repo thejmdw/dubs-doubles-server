@@ -12,12 +12,21 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.parsers import MultiPartParser, FormParser
 
 
+class ProductTypeSerializer(serializers.ModelSerializer):
+    """JSON serializer for products"""
+    class Meta:
+        model = ProductType
+        fields = ('id', 'name')
+        depth = 1
+
 class ProductSerializer(serializers.ModelSerializer):
     """JSON serializer for products"""
+    product_type = ProductTypeSerializer(many=False)
+
     class Meta:
         model = Product
         fields = ('id', 'name', 'price', 'description',
-                  'quantity', 'image_path', 'product_type_id')
+                  'quantity', 'image_path', 'product_type')
         depth = 1
 
 
@@ -87,13 +96,13 @@ class Products(ViewSet):
         new_product.price = request.data["price"]
         new_product.description = request.data["description"]
         new_product.quantity = request.data["quantity"]
-        new_product.image_path = request.data["image_path"]
+        # new_product.image_path = request.data["image_path"]
 
         customer = Customer.objects.get(user=request.auth.user)
         new_product.customer = customer
 
-        product_category = ProductCategory.objects.get(pk=request.data["category_id"])
-        new_product.category = product_category
+        product_type = ProductType.objects.get(pk=request.data["product_type_id"])
+        new_product.product_type = product_type
 
         if "image_path" in request.data:
             format, imgstr = request.data["image_path"].split(';base64,')
@@ -179,14 +188,13 @@ class Products(ViewSet):
         product.price = request.data["price"]
         product.description = request.data["description"]
         product.quantity = request.data["quantity"]
-        product.created_date = request.data["created_date"]
-        product.location = request.data["location"]
+        product.image_path = request.data["image_path"]
 
         customer = Customer.objects.get(user=request.auth.user)
         product.customer = customer
 
-        product_category = ProductCategory.objects.get(pk=request.data["category_id"])
-        product.category = product_category
+        product_type = ProductType.objects.get(pk=request.data["product_type"])
+        product.product_type = product_type
         product.save()
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
@@ -294,36 +302,3 @@ class Products(ViewSet):
         serializer = ProductSerializer(
             products, many=True, context={'request': request})
         return Response(serializer.data)
-
-    @action(methods=['post'], detail=True)
-    def recommend(self, request, pk=None):
-        """Recommend products to other users"""
-
-        if request.method == "POST":
-            rec = Recommendation()
-            rec.recommender = Customer.objects.get(user=request.auth.user)
-            rec.customer = Customer.objects.get(user__id=request.data["recipient"])
-            rec.product = Product.objects.get(pk=pk)
-
-            rec.save()
-
-            return Response(None, status=status.HTTP_204_NO_CONTENT)
-
-        return Response(None, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-
-
-    @action(methods=['post'], detail=True)
-    def rating(self, request, pk=None):
-        """Recommend products to other users"""
-
-        if request.method == "POST":
-            rating = Rating()
-            rating.customer = Customer.objects.get(user=request.auth.user)
-            rating.product = Product.objects.get(pk=pk)
-            rating.rating = request.data["rating"]
-
-            rating.save()
-
-            return Response(None, status=status.HTTP_204_NO_CONTENT)
-
-        return Response(None, status=status.HTTP_405_METHOD_NOT_ALLOWED)
