@@ -7,3 +7,5 @@ from .producttype import ProductTypes
 from .customer import Customers
 from .lineitem import LineItems
 from .user import Users
+from .cart import Cart
+from .profile import Profile
