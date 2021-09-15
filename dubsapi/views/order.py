@@ -6,14 +6,40 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from rest_framework.decorators import action
-from dubsapi.models import Order, Payment, Customer, Product, LineItem
+from dubsapi.models import Order, Payment, Customer, Product, LineItem, Topping, LineItemTopping
 from .product import ProductSerializer
+from django.contrib.auth.models import User
 
+class ToppingSerializer(serializers.HyperlinkedModelSerializer):
+    """JSON serializer for customer profile
+
+    Arguments:
+        serializers
+    """
+    class Meta:
+        model = Topping
+        fields = ('id', 'name', 'price')
+        depth = 1
+
+class LineItemToppingSerializer(serializers.HyperlinkedModelSerializer):
+    """JSON serializer for customer profile
+
+    Arguments:
+        serializers
+    """
+
+    topping = ToppingSerializer(many=True)
+    class Meta:
+        model = LineItemTopping
+        # fields = '__all__'
+        fields = ('id', 'topping')
+        depth = 1
 
 class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for line items """
 
     product = ProductSerializer(many=False)
+    toppings = ToppingSerializer(many=True)
 
     class Meta:
         model = LineItem
@@ -21,13 +47,40 @@ class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
             view_name='lineitem',
             lookup_field='id'
         )
-        fields = ('id', 'product')
+        fields = ('id', 'product', 'toppings')
         depth = 1
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    """JSON serializer for customer profile
+
+    Arguments:
+        serializers
+    """
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+        depth = 1
+
+class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+    """"""
+
+    user = UserSerializer(many=False)
+
+    class Meta:
+        model = Customer
+        url = serializers.HyperlinkedIdentityField(
+            view_name='customer',
+            lookup_field='id'
+        )
+        fields = ('id', 'user')
+        depth = 1
+
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for customer orders"""
 
     lineitems = OrderLineItemSerializer(many=True)
+    customer = CustomerSerializer(many=False)
 
     class Meta:
         model = Order

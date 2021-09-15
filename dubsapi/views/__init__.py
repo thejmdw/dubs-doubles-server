@@ -8,6 +8,7 @@ from .topping import Toppings
 from .toppingtype import ToppingTypes
 from .customer import Customers
 from .lineitem import LineItems
+from .lineitemtopping import LineItemToppings
 from .user import Users
 from .cart import Cart
 from .profile import Profile
