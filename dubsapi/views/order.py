@@ -31,6 +31,7 @@ class LineItemToppingSerializer(serializers.HyperlinkedModelSerializer):
     topping = ToppingSerializer(many=True)
     class Meta:
         model = LineItemTopping
+        # fields = '__all__'
         fields = ('id', 'topping')
         depth = 1
 

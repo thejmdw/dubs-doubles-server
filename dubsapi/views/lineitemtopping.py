@@ -22,7 +22,7 @@ class LineItemToppingSerializer(serializers.HyperlinkedModelSerializer):
             view_name='lineItemTopping',
             lookup_field='id'
         )
-        fields = ('id', 'url', 'name', 'price')
+        fields = ('id', 'line_item_id', 'topping_id')
 
 
 class LineItemToppings(ViewSet):
@@ -75,18 +75,18 @@ class LineItemToppings(ViewSet):
     #     except Exception as ex:
     #         return HttpResponseServerError(ex)
 
-    # def list(self, request):
-    #     """Handle GET requests to LineItemTopping resource"""
-    #     product_type = LineItemTopping.objects.all()
+    def list(self, request):
+        """Handle GET requests to LineItemTopping resource"""
+        product_type = LineItemTopping.objects.all()
 
-    #     # Support filtering LineItemToppings by area id
-    #     # name = self.request.query_params.get('name', None)
-    #     # if name is not None:
-    #     #     ProductCategories = ProductCategories.filter(name=name)
+        # Support filtering LineItemToppings by area id
+        # name = self.request.query_params.get('name', None)
+        # if name is not None:
+        #     ProductCategories = ProductCategories.filter(name=name)
 
-    #     serializer = LineItemToppingSerializer(
-    #         product_type, many=True, context={'request': request})
-    #     return Response(serializer.data)
+        serializer = LineItemToppingSerializer(
+            product_type, many=True, context={'request': request})
+        return Response(serializer.data)
 
     def destroy(self, request, pk=None):
         """
