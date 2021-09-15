@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from rest_framework.decorators import action
-from dubsapi.models import Order, Payment, Customer, Product, LineItem, Topping
+from dubsapi.models import Order, Payment, Customer, Product, LineItem, Topping, LineItemTopping
 from .product import ProductSerializer
 from django.contrib.auth.models import User
 
@@ -18,7 +18,20 @@ class ToppingSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = Topping
-        fields = ('name', 'price')
+        fields = ('id', 'name', 'price')
+        depth = 1
+
+class LineItemToppingSerializer(serializers.HyperlinkedModelSerializer):
+    """JSON serializer for customer profile
+
+    Arguments:
+        serializers
+    """
+
+    topping = ToppingSerializer(many=True)
+    class Meta:
+        model = LineItemTopping
+        fields = ('id', 'topping')
         depth = 1
 
 class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
@@ -26,7 +39,7 @@ class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
 
     product = ProductSerializer(many=False)
     toppings = ToppingSerializer(many=True)
-    
+
     class Meta:
         model = LineItem
         url = serializers.HyperlinkedIdentityField(

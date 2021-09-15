@@ -176,8 +176,13 @@ class Profile(ViewSet):
                     customer=current_user.id, payment_type=None)
                 line_items = LineItem.objects.filter(order=open_order)
                 total = 0
+                add_on_total = 0
+
                 for item in line_items:
                     total += item.product.price
+                    for topping in item.toppings.all():
+                        total += topping.price
+
                 line_items = LineItemSerializer(
                     line_items, many=True, context={'request': request})
 
@@ -249,6 +254,15 @@ class Profile(ViewSet):
                 pk=request.data["product_id"])
             line_item.order = open_order
             line_item.save()
+            line_item.toppings.set(request.data["toppings"])
+
+            total = 0
+                
+            for item in line_item.toppings:
+                    total += item.price
+
+
+            line_item["price"] = total        
 
             line_item_json = LineItemSerializer(
                 line_item, many=False, context={'request': request})
