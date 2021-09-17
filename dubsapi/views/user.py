@@ -18,19 +18,19 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
             view_name='user',
             lookup_field = 'id'
         )
-        fields = ('id', 'url', 'username', 'password', 'first_name', 'last_name', 'email', 'is_active', 'date_joined')
+        fields = ('id', 'url', 'username', 'password', 'first_name', 'last_name', 'email', 'is_active', 'date_joined', 'is_staff')
 
 
 class Users(ViewSet):
-    """Users for Bangazon
-    Purpose: Allow a user to communicate with the Bangazon database to GET PUT POST and DELETE Users.
+    """Users for Dubs Doubles
+    Purpose: Allow a user to communicate with the Dub's Doubles database to GET PUT POST and DELETE Users.
     Methods: GET PUT(id) POST
 """
 
 
     def retrieve(self, request, pk=None):
         """Handle GET requests for single customer
-        Purpose: Allow a user to communicate with the Bangazon database to retrieve  one user
+        Purpose: Allow a user to communicate with the Dub's Doubles database to retrieve  one user
         Methods:  GET
         Returns:
             Response -- JSON serialized customer instance

@@ -1,3 +1,4 @@
+from dubsapi.models.lineitemtopping import LineItemTopping
 from django.db import models
 
 
@@ -14,3 +15,9 @@ class LineItem(models.Model):
     toppings = models.ManyToManyField("Topping",
                                 through="LineItemTopping",
                                 related_name="lineitemtoppings")
+
+    @property
+    def liToppings(self):
+        toppingsList = LineItemTopping.objects.filter(line_item=self)
+
+        return toppingsList

@@ -294,7 +294,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email')
+        fields = ('first_name', 'last_name', 'email', 'is_staff')
         depth = 1
 
 

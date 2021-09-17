@@ -28,11 +28,11 @@ class LineItemToppingSerializer(serializers.HyperlinkedModelSerializer):
         serializers
     """
 
-    topping = ToppingSerializer(many=True)
+    # topping = ToppingSerializer(many=True)
     class Meta:
         model = LineItemTopping
         # fields = '__all__'
-        fields = ('id', 'topping')
+        fields = ('id', 'topping',)
         depth = 1
 
 class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
@@ -40,6 +40,7 @@ class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
 
     product = ProductSerializer(many=False)
     toppings = ToppingSerializer(many=True)
+    liToppings = LineItemToppingSerializer(many=True)
 
     class Meta:
         model = LineItem
@@ -47,7 +48,7 @@ class OrderLineItemSerializer(serializers.HyperlinkedModelSerializer):
             view_name='lineitem',
             lookup_field='id'
         )
-        fields = ('id', 'product', 'toppings')
+        fields = ('id', 'product', 'toppings',  'liToppings')
         depth = 1
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
