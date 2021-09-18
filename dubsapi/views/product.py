@@ -1,6 +1,7 @@
 """View module for handling requests about products"""
 from rest_framework.decorators import action
 import base64
+import uuid
 from django.core.files.base import ContentFile
 from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
@@ -97,9 +98,15 @@ class Products(ViewSet):
         new_product.description = request.data["description"]
         new_product.quantity = request.data["quantity"]
         # new_product.image_path = request.data["image_path"]
+        if request.data["image_path"] != {}:
+            format, imgstr = request.data["image_path"].split(';base64,')
+            ext = format.split('/')[-1]
+            data = ContentFile(base64.b64decode(imgstr), name=f'{uuid.uuid4()}.{ext}')
+        else:
+            data = None
 
-        customer = Customer.objects.get(user=request.auth.user)
-        new_product.customer = customer
+        # customer = Customer.objects.get(user=request.auth.user)
+        # new_product.customer = customer
 
         product_type = ProductType.objects.get(pk=request.data["product_type_id"])
         new_product.product_type = product_type
@@ -188,10 +195,17 @@ class Products(ViewSet):
         product.price = request.data["price"]
         product.description = request.data["description"]
         product.quantity = request.data["quantity"]
-        product.image_path = request.data["image_path"]
+        splitprofilepic = request.data["image_path"].split("/")
+        if splitprofilepic[0] == "http:":
+            pass
+        else:
+            format, imgstr = request.data["image_path"].split(';base64,')
+            ext = format.split('/')[-1]
+            data = ContentFile(base64.b64decode(imgstr), name=f'{uuid.uuid4()}.{ext}')
+            product.image_path = data
 
-        customer = Customer.objects.get(user=request.auth.user)
-        product.customer = customer
+        # customer = Customer.objects.get(user=request.auth.user)
+        # product.customer = customer
 
         product_type = ProductType.objects.get(pk=request.data["product_type"])
         product.product_type = product_type

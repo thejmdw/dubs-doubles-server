@@ -322,5 +322,17 @@
             "product_type_id": 3,
             "quantity": 0
         }
+    },
+    {
+        "model": "dubsapi.product",
+        "pk": 28,
+        "fields": {
+            "name": "Curly Fries",
+            "price": 3.00,
+            "description": "",
+            "image_path": "",
+            "product_type_id": 2,
+            "quantity": 0
+        }
     }
 ]

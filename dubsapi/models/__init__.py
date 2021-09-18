@@ -7,3 +7,4 @@ from .topping import Topping
 from .toppingtype import ToppingType
 from .lineitem import LineItem
 from .lineitemtopping import LineItemTopping
+# from .image import Image
