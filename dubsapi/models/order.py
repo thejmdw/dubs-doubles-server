@@ -8,4 +8,4 @@ from .payment import Payment
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.DO_NOTHING,)
     payment_type = models.ForeignKey(Payment, on_delete=models.DO_NOTHING, null=True)
-    created_date = models.DateTimeField(default=datetime.now, blank=True)
+    created_date = models.DateField(default=datetime.now, blank=True)

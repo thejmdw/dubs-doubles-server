@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 from dubsapi.views import register_user, login_user, Customers, Orders, Products, Toppings, LineItemToppings
 from dubsapi.views import ProductTypes, LineItems, Payments, Users, Cart, Profile, ToppingTypes
 from rest_framework import routers
@@ -33,6 +35,7 @@ router.register(r'paymenttypes', Payments, 'payment')
 router.register(r'profile', Profile, 'profile')
 router.register(r'toppingtypes', ToppingTypes, 'toppingtype')
 router.register(r'toppings', Toppings, 'topping')
+# router.register(r'images', ImageView, 'image')
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -40,5 +43,5 @@ urlpatterns = [
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

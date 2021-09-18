@@ -124,7 +124,14 @@ class Orders(ViewSet):
         try:
             customer = Customer.objects.get(user=request.auth.user)
             order = Order.objects.get(pk=pk, customer=customer)
+            # line_items = LineItem.objects.filter(order=pk)
+            # total = 0
+            # for item in line_items:
+            #         total += item.product.price
+            #         for topping in item.toppings.all():
+            #             total += topping.price
             serializer = OrderSerializer(order, context={'request': request})
+            # order["total"] = total
             return Response(serializer.data)
 
         except Order.DoesNotExist as ex:
