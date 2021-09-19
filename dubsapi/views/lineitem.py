@@ -8,15 +8,18 @@ from rest_framework import status
 from dubsapi.models import LineItem, Order, Product, Customer
 
 
-class LineItemSerializer(serializers.HyperlinkedModelSerializer):
+
+
+class LineItemSerializer(serializers.ModelSerializer):
     """JSON serializer for line items """
     class Meta:
         model = LineItem
-        url = serializers.HyperlinkedIdentityField(
-            view_name='lineitem',
-            lookup_field='id'
-        )
-        fields = ('id', 'url', 'order', 'product')
+        # url = serializers.HyperlinkedIdentityField(
+        #     view_name='lineitem',
+        #     lookup_field='id'
+        # )
+        fields = ('id', 'order', 'product', 'toppings')
+        depth = 1
 
 class LineItems(ViewSet):
     """Line items for dubs orders"""
@@ -33,6 +36,18 @@ class LineItems(ViewSet):
     #   model in your API, or incorrectly configured the `lookup_field`
     #   attribute on this field.
     # queryset = LineItem.objects.all()
+    def list(self, request):
+        """Handle GET requests to Topping resource"""
+        line_item = LineItem.objects.all()
+
+        # Support filtering Toppings by area id
+        # name = self.request.query_params.get('name', None)
+        # if name is not None:
+        #     ProductCategories = ProductCategories.filter(name=name)
+
+        serializer = LineItemSerializer(
+            line_item, many=True, context={'request': request})
+        return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
         """

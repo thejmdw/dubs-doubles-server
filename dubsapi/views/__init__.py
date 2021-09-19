@@ -12,4 +12,7 @@ from .lineitemtopping import LineItemToppings
 from .user import Users
 from .cart import Cart
 from .profile import Profile
+from .connection import Connection
+from .charts import totalSales
+from .charts import productSales
 # from .image import ImageView
