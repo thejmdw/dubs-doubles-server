@@ -1,20 +1,13 @@
 -- ALL TIME TOTAL SALES
 SELECT
-    sum(p.price) AS productsales
-    -- sum(t.price) AS toppingsales
+    sum(t.price) AS toppingsales
 
 FROM
     dubsapi_lineitem li
 JOIN
-    dubsapi_order o ON o.id = li.order_id 
+    dubsapi_lineitemtopping lit ON lit.line_item_id = li.id
 JOIN
-    dubsapi_product p ON p.id = li.product_id
-JOIN
-    dubsapi_customer c ON c.id = o.customer_id
--- JOIN
---     dubsapi_lineitemtopping lit ON lit.line_item_id = li.id
--- JOIN
---     dubsapi_topping t ON lit.topping_id = t.id
+    dubsapi_topping t ON lit.topping_id = t.id
 
 --DAILY SALES
 SELECT
