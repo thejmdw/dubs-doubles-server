@@ -52,6 +52,54 @@ def productSales(request):
 
     return JsonResponse(product_sales)
 
+def singleProductSales(request, id):
+    with connection.cursor() as cursor:
+        query="""
+        SELECT 
+            COUNT(li.product_id),
+            li.product_id,
+            p.name
+        FROM
+            dubsapi_lineitem li
+        JOIN
+            dubsapi_product p ON p.id = li.product_id
+        GROUP BY 
+            product_id 
+        HAVING 
+            product_id = %s
+        """
+        cursor.execute(query, [id])
+        row = dictfetchall(cursor)
+        
+        print(row)
+        product_sales = {}
+        product_sales["product_sales"] = row
+
+    return JsonResponse(product_sales)
+
+def toppingSales(request):
+    with connection.cursor() as cursor:
+        query="""
+        SELECT 
+            COUNT(lit.topping_id) AS topping_count,
+            lit.topping_id,
+            t.name
+        FROM
+            dubsapi_lineitemtopping lit
+        JOIN
+            dubsapi_topping t ON t.id = lit.topping_id
+        GROUP BY 
+            topping_id
+        """
+        cursor.execute(query)
+        row = dictfetchall(cursor)
+        
+        print(row)
+        topping_sales = {}
+        topping_sales["topping_sales"] = row
+
+    return JsonResponse(topping_sales)
+
 def dailySales(request):
     with connection.cursor() as cursor:
         query="""

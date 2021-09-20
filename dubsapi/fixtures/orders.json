@@ -25,5 +25,23 @@
             "payment_type_id": 2,
             "created_date": "2021-09-06"
         }
+    },
+    {
+        "model": "dubsapi.order",
+        "pk": 4,
+        "fields": {
+            "customer_id": 2,
+            "payment_type_id": 3,
+            "created_date": "2021-09-07"
+        }
+    },
+    {
+        "model": "dubsapi.order",
+        "pk": 5,
+        "fields": {
+            "customer_id": 1,
+            "payment_type_id": 2,
+            "created_date": "2021-09-07"
+        }
     }
 ]

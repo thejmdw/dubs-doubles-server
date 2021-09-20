@@ -15,5 +15,7 @@ from .profile import Profile
 from .connection import Connection
 from .charts import totalSales
 from .charts import productSales
+from .charts import singleProductSales
+from .charts import toppingSales
 from .charts import dailySales
 # from .image import ImageView
