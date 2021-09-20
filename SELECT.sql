@@ -36,8 +36,8 @@ JOIN
 JOIN
     dubsapi_customer c ON c.id = o.customer_id
 GROUP BY o.created_date
-HAVING 
-    o.created_date = '2021-09-01'
+-- HAVING 
+--     o.created_date = '2021-09-06'
 
 -- WEEKLY / MONTHLY SALES
 SELECT
