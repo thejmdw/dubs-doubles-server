@@ -1,1 +1,1 @@
-web: gunicorn dub.wsgi --log-file -
+web: gunicorn dubs.wsgi --log-file -
