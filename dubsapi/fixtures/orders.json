@@ -43,5 +43,41 @@
             "payment_type_id": 2,
             "created_date": "2021-09-07"
         }
+    },
+    {
+        "model": "dubsapi.order",
+        "pk": 6,
+        "fields": {
+            "customer_id": 2,
+            "payment_type_id": 3,
+            "created_date": "2021-09-08"
+        }
+    },
+    {
+        "model": "dubsapi.order",
+        "pk": 7,
+        "fields": {
+            "customer_id": 1,
+            "payment_type_id": 2,
+            "created_date": "2021-09-09"
+        }
+    },
+    {
+        "model": "dubsapi.order",
+        "pk": 8,
+        "fields": {
+            "customer_id": 2,
+            "payment_type_id": 3,
+            "created_date": "2021-09-10"
+        }
+    },
+    {
+        "model": "dubsapi.order",
+        "pk": 9,
+        "fields": {
+            "customer_id": 1,
+            "payment_type_id": 2,
+            "created_date": "2021-09-11"
+        }
     }
 ]
