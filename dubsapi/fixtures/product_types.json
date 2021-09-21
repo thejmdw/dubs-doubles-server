@@ -12,12 +12,5 @@
         "fields": {
             "name": "Fries"
         }
-    },
-    {
-        "model": "dubsapi.producttype",
-        "pk": 3,
-        "fields": {
-            "name": "Combos"
-        }
     }
 ]
