@@ -5,7 +5,7 @@
         "fields": {
             "merchant_name": "Visa",
             "account_number": 1234123412341234,
-            "customer_id": 1,
+            "customer_id": "1",
             "expiration_date": "01/2024",
             "created_on": "2019-11-11"
         }
@@ -16,7 +16,7 @@
         "fields": {
             "merchant_name": "Mastercard",
             "account_number": 3456345634563456,
-            "customer_id": 2,
+            "customer_id": "2",
             "expiration_date": "04/2023",
             "created_on": "2019-12-12"
         }
@@ -27,7 +27,7 @@
         "fields": {
             "merchant_name": "Visa",
             "account_number": 6789678967896789,
-            "customer_id": 2,
+            "customer_id": "2",
             "expiration_date": "05/2026",
             "created_on": "2019-03-11"
         }

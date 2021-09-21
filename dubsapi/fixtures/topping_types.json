@@ -26,5 +26,12 @@
         "fields": {
             "name": "Cheese"
         }
+    },
+    {
+        "model": "dubsapi.toppingtype",
+        "pk": 5,
+        "fields": {
+            "name": "Premiums"
+        }
     }
 ]
