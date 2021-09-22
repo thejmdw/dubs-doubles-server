@@ -7,4 +7,4 @@ class Payment(models.Model):
     account_number = models.CharField(max_length=16)
     expiration_date = models.CharField(max_length=7)
     customer = models.ForeignKey(Customer, on_delete=models.DO_NOTHING, related_name="payment_types")
-    created_on = models.DateField(auto_now_add=True)    
+    created_on = models.DateField(auto_now_add=True)
