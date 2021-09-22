@@ -23,7 +23,7 @@ JOIN
     dubsapi_topping t ON lit.topping_id = t.id
 
 
---DAILY SALES
+--DAILY SALES--
 SELECT
     o.created_date,
     sum(p.price) AS total_sales
