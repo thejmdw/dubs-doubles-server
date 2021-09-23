@@ -111,12 +111,12 @@ class Products(ViewSet):
         product_type = ProductType.objects.get(pk=request.data["product_type_id"])
         new_product.product_type = product_type
 
-        if "image_path" in request.data:
-            format, imgstr = request.data["image_path"].split(';base64,')
-            ext = format.split('/')[-1]
-            data = ContentFile(base64.b64decode(imgstr), name=f'{new_product.id}-{request.data["name"]}.{ext}')
+        # if "image_path" in request.data:
+        #     format, imgstr = request.data["image_path"].split(';base64,')
+        #     ext = format.split('/')[-1]
+        #     data = ContentFile(base64.b64decode(imgstr), name=f'{new_product.id}-{request.data["name"]}.{ext}')
 
-            new_product.image_path = data
+        new_product.image_path = data
 
         new_product.clean_fields()
         new_product.save()
