@@ -5,8 +5,8 @@
         "fields": {
             "name": "The Classic",
             "price": 10.00,
-            "description": "",
-            "image_path": "",
+            "description": "Mustard, Mayo, Lettuce, Onion, Tomato, Cheddar",
+            "image_path": "products/ad50b196-f596-4890-9df2-c42ab5bb4443.jpg",
             "product_type_id": 1,
             "quantity": 0
         }
@@ -17,8 +17,8 @@
         "fields": {
             "name": "The Rodeo",
             "price": 10.00,
-            "description": "",
-            "image_path": "",
+            "description": "Mustard, Mayo, Onion, Pickle, American Cheese, Wrapped in Foil",
+            "image_path": "products/9331f6a1-b678-452e-a65a-c3cecde89f6c.jpg",
             "product_type_id": 1,
             "quantity": 0
         }
@@ -29,8 +29,8 @@
         "fields": {
             "name": "The Stranger",
             "price": 10.00,
-            "description": "",
-            "image_path": "",
+            "description": "Hatch Chilis, American Cheese, Gifford's Bacon",
+            "image_path": "products/965a93d9-a8d7-42c3-b491-03e888e1a6bf.jpg",
             "product_type_id": 1,
             "quantity": 0
         }
@@ -39,10 +39,10 @@
         "model": "dubsapi.product",
         "pk": 4,
         "fields": {
-            "name": "The Beyond Classic",
+            "name": "The Beyond",
             "price": 12.00,
-            "description": "",
-            "image_path": "",
+            "description": "Mustard, Mayo, Diced Onion, Pickles, Cheddar",
+            "image_path": "products/9ba3a99d-c47f-4edf-8f07-4b350724af1a.jpg",
             "product_type_id": 1,
             "quantity": 0
         }
@@ -53,8 +53,8 @@
         "fields": {
             "name": "The Main Street",
             "price": 10.00,
-            "description": "",
-            "image_path": "",
+            "description": "Mustard, Onion, Pickle, Benton's Bacon, Cheddar",
+            "image_path": "products/ebc13c0f-bcb0-472a-97cd-afa0ab5b8b2a.jpg",
             "product_type_id": 1,
             "quantity": 0
         }
@@ -66,7 +66,7 @@
             "name": "Crinkle Cut Fries",
             "price": 3.00,
             "description": "",
-            "image_path": "",
+            "image_path": "products/c1801d9c-5ab0-4153-aebc-9459684e8098.jpg",
             "product_type_id": 2,
             "quantity": 0
         }
@@ -78,7 +78,7 @@
             "name": "Tater Tots",
             "price": 3.00,
             "description": "",
-            "image_path": "",
+            "image_path": "products/d3b9e7dd-8de6-4af3-ac8c-9932ddfc577c.jpg",
             "product_type_id": 2,
             "quantity": 0
         }
@@ -90,7 +90,7 @@
             "name": "Onion Rings",
             "price": 4.50,
             "description": "",
-            "image_path": "",
+            "image_path": "products/00122b9d-fec7-4504-b4fa-d63a59ff22d9.jpg",
             "product_type_id": 2,
             "quantity": 0
         }
@@ -101,8 +101,8 @@
         "fields": {
             "name": "The BYOBurger",
             "price": 0.00,
-            "description": "",
-            "image_path": "",
+            "description": "Build Your Own Burger",
+            "image_path": "products/e1a93f4d-b226-48ab-abed-5c339d302f1c.jpg",
             "product_type_id": 1,
             "quantity": 0
         }
@@ -114,7 +114,7 @@
             "name": "Curly Fries",
             "price": 3.00,
             "description": "",
-            "image_path": "",
+            "image_path": "products/95c70e05-45f9-41a5-87ba-2fe1e55edde5.jpg",
             "product_type_id": 2,
             "quantity": 0
         }

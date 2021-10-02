@@ -28,7 +28,7 @@
         "pk": 4,
         "fields": {
             "order_id": 1,
-            "product_id": 1
+            "product_id": 3
         }
     },
     {
@@ -99,7 +99,7 @@
         "model": "dubsapi.lineitem",
         "pk": 13,
         "fields": {
-            "order_id": 3,
+            "order_id": 6,
             "product_id": 4
         }
     },
@@ -107,8 +107,8 @@
         "model": "dubsapi.lineitem",
         "pk": 14,
         "fields": {
-            "order_id": 4,
-            "product_id": 1
+            "order_id": 6,
+            "product_id": 3
         }
     },
     {
@@ -131,7 +131,7 @@
         "model": "dubsapi.lineitem",
         "pk": 17,
         "fields": {
-            "order_id": 7,
+            "order_id": 6,
             "product_id": 3
         }
     },
@@ -139,7 +139,7 @@
         "model": "dubsapi.lineitem",
         "pk": 18,
         "fields": {
-            "order_id": 4,
+            "order_id": 7,
             "product_id": 1
         }
     },
@@ -147,7 +147,7 @@
         "model": "dubsapi.lineitem",
         "pk": 19,
         "fields": {
-            "order_id": 4,
+            "order_id": 7,
             "product_id": 5
         }
     },
@@ -155,7 +155,7 @@
         "model": "dubsapi.lineitem",
         "pk": 20,
         "fields": {
-            "order_id": 5,
+            "order_id": 7,
             "product_id": 4
         }
     },
@@ -163,7 +163,7 @@
         "model": "dubsapi.lineitem",
         "pk": 21,
         "fields": {
-            "order_id": 5,
+            "order_id": 7,
             "product_id": 9
         }
     },
@@ -171,7 +171,7 @@
         "model": "dubsapi.lineitem",
         "pk": 22,
         "fields": {
-            "order_id": 6,
+            "order_id": 8,
             "product_id": 2
         }
     },
@@ -179,7 +179,7 @@
         "model": "dubsapi.lineitem",
         "pk": 23,
         "fields": {
-            "order_id": 6,
+            "order_id": 8,
             "product_id": 7
         }
     },
@@ -187,23 +187,23 @@
         "model": "dubsapi.lineitem",
         "pk": 24,
         "fields": {
-            "order_id": 6,
-            "product_id": 1
+            "order_id": 8,
+            "product_id": 3
         }
     },
     {
         "model": "dubsapi.lineitem",
         "pk": 25,
         "fields": {
-            "order_id": 6,
-            "product_id": 6
+            "order_id": 8,
+            "product_id": 7
         }
     },
     {
         "model": "dubsapi.lineitem",
         "pk": 26,
         "fields": {
-            "order_id": 7,
+            "order_id": 9,
             "product_id": 7
         }
     },
@@ -211,7 +211,7 @@
         "model": "dubsapi.lineitem",
         "pk": 27,
         "fields": {
-            "order_id": 7,
+            "order_id": 9,
             "product_id": 2
         }
     },
@@ -219,15 +219,15 @@
         "model": "dubsapi.lineitem",
         "pk": 28,
         "fields": {
-            "order_id": 7,
-            "product_id": 1
+            "order_id": 9,
+            "product_id": 3
         }
     },
     {
         "model": "dubsapi.lineitem",
         "pk": 29,
         "fields": {
-            "order_id": 8,
+            "order_id": 9,
             "product_id": 3
         }
     },
@@ -235,7 +235,7 @@
         "model": "dubsapi.lineitem",
         "pk": 30,
         "fields": {
-            "order_id": 8,
+            "order_id": 9,
             "product_id": 4
         }
     },

@@ -71,7 +71,9 @@ class Payments(ViewSet):
         """
         try:
             payment = Payment.objects.get(pk=pk)
-            payment.delete()
+
+            if payment.customer == Customer.objects.get(user_id=request.auth.user_id):
+                payment.delete()
 
             return Response({}, status=status.HTTP_204_NO_CONTENT)
 

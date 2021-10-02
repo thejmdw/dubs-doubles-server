@@ -23,6 +23,7 @@ class LineItemToppingSerializer(serializers.HyperlinkedModelSerializer):
             lookup_field='id'
         )
         fields = ('id', 'line_item_id', 'topping_id')
+        depth = 1
 
 
 class LineItemToppings(ViewSet):

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d6707680c92c331d20f39a39e35e2d288bf7774ca6da4b38d3753d76cbfdb73d"
+            "sha256": "ede7630214f857f7ebd6361c1352217f878387ecafd01bfae955477d95d89ce5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -63,6 +63,7 @@
             "index": "pypi",
             "version": "==3.8.0"
         },
+<<<<<<< HEAD
         "django-on-heroku": {
             "hashes": [
                 "sha256:4a72ade056335112cba22eea332552d840b718dd8140d43c2d70bb739875955b",
@@ -70,6 +71,14 @@
             ],
             "index": "pypi",
             "version": "==1.1.2"
+=======
+        "django-resized": {
+            "hashes": [
+                "sha256:77490397e94f37744f9199b7f8a5922329662dd7fc21473952ffe0417d36a9da"
+            ],
+            "index": "pypi",
+            "version": "==0.3.11"
+>>>>>>> main
         },
         "djangorestframework": {
             "hashes": [
@@ -92,7 +101,11 @@
                 "sha256:9c2ea1e62d871267b78307fe511c0838ba0da28698c5732d54e2790bf3ba9899",
                 "sha256:e17d6e2b81095c9db0a03a8025a957f334d6ea30b26f9ec70805411e5c7c81f2"
             ],
+<<<<<<< HEAD
             "markers": "python_version < '4' and python_full_version >= '3.6.1'",
+=======
+            "markers": "python_version < '4.0' and python_full_version >= '3.6.1'",
+>>>>>>> main
             "version": "==5.9.3"
         },
         "lazy-object-proxy": {
@@ -295,6 +308,7 @@
             "markers": "python_version < '3.10'",
             "version": "==3.10.0.2"
         },
+<<<<<<< HEAD
         "whitenoise": {
             "hashes": [
                 "sha256:d234b871b52271ae7ed6d9da47ffe857c76568f11dd30e28e18c5869dbd11e12",
@@ -303,6 +317,8 @@
             "markers": "python_version >= '3.5' and python_version < '4'",
             "version": "==5.3.0"
         },
+=======
+>>>>>>> main
         "wrapt": {
             "hashes": [
                 "sha256:b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"
