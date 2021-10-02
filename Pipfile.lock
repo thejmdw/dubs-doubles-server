@@ -63,7 +63,6 @@
             "index": "pypi",
             "version": "==3.8.0"
         },
-<<<<<<< HEAD
         "django-on-heroku": {
             "hashes": [
                 "sha256:4a72ade056335112cba22eea332552d840b718dd8140d43c2d70bb739875955b",
@@ -71,14 +70,13 @@
             ],
             "index": "pypi",
             "version": "==1.1.2"
-=======
+        },
         "django-resized": {
             "hashes": [
                 "sha256:77490397e94f37744f9199b7f8a5922329662dd7fc21473952ffe0417d36a9da"
             ],
             "index": "pypi",
             "version": "==0.3.11"
->>>>>>> main
         },
         "djangorestframework": {
             "hashes": [
