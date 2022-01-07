@@ -62,7 +62,7 @@ REST_FRAMEWORK = {
 }
 
 ALLOWED_HOSTS = [
-    'https://dubs.thejmdw.com',
+    'https://dubs.thejmdw.com/',
     'https://thejmdw.com',    
 ]
 
@@ -73,9 +73,9 @@ CORS_ORIGIN_WHITELIST = (
     'https://dubs.thejmdw.com/',
 )
 
-CORS_ALLOWED_ORIGINS = [
-    "https://dubs.thejmdw.com/",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://dubs.thejmdw.com/",
+# ]
 
 
 
