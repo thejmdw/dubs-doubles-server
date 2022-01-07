@@ -61,16 +61,12 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-ALLOWED_HOSTS = [
-    'https://dubs.thejmdw.com/',
-    'https://thejmdw.com',    
-]
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'http://thejmdw.com',
-    'https://dubs.thejmdw.com/',
+    # 'http://thejmdw.com',
+    # 'https://dubs.thejmdw.com/',
 )
 
 # CORS_ALLOWED_ORIGINS = [
