@@ -41,7 +41,7 @@ def productSales(request):
         JOIN
             dubsapi_product p ON p.id = li.product_id
         GROUP BY 
-            product_id
+            product_id, p.name
         """
         cursor.execute(query)
         row = dictfetchall(cursor)
@@ -56,7 +56,7 @@ def singleProductSales(request, id):
     with connection.cursor() as cursor:
         query="""
         SELECT 
-            COUNT(li.product_id) AS product_count,
+            COUNT(li.product_id),
             li.product_id,
             p.name
         FROM
@@ -65,6 +65,8 @@ def singleProductSales(request, id):
             dubsapi_product p ON p.id = li.product_id
         GROUP BY 
             product_id, p.name
+        HAVING 
+            product_id = %s
         """
         cursor.execute(query, [id])
         row = dictfetchall(cursor)
