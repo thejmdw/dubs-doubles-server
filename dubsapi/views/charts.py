@@ -56,7 +56,7 @@ def singleProductSales(request, id):
     with connection.cursor() as cursor:
         query="""
         SELECT 
-            COUNT(li.product_id),
+            COUNT(li.product_id) AS product_count,
             li.product_id,
             p.name
         FROM
