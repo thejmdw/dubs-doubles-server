@@ -64,7 +64,7 @@ def singleProductSales(request, id):
         JOIN
             dubsapi_product p ON p.id = li.product_id
         GROUP BY 
-            product_id,. p.name
+            product_id, p.name
         """
         cursor.execute(query, [id])
         row = dictfetchall(cursor)
