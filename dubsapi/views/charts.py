@@ -64,7 +64,7 @@ def singleProductSales(request, id):
         JOIN
             dubsapi_product p ON p.id = li.product_id
         GROUP BY 
-            product_id 
+            product_id,. p.name
         HAVING 
             product_id = %s
         """
@@ -89,7 +89,7 @@ def toppingSales(request):
         JOIN
             dubsapi_topping t ON t.id = lit.topping_id
         GROUP BY 
-            topping_id
+            topping_id, t.name
         """
         cursor.execute(query)
         row = dictfetchall(cursor)
