@@ -35,7 +35,8 @@ def productSales(request):
         SELECT 
             COUNT(li.product_id) as total_number_sold,
             li.product_id,
-            p.name
+            p.name,
+            row_number() OVER (ORDER BY COUNT(li.product_id) DESC) as id
         FROM
             dubsapi_lineitem li
         JOIN
@@ -83,7 +84,8 @@ def toppingSales(request):
         SELECT 
             COUNT(lit.topping_id) AS topping_count,
             lit.topping_id,
-            t.name
+            t.name,
+            row_number() OVER (ORDER BY COUNT(lit.topping_id) DESC) as id
         FROM
             dubsapi_lineitemtopping lit
         JOIN

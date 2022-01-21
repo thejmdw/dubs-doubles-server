@@ -83,7 +83,8 @@ GROUP BY o.created_date HAVING o.created_date BETWEEN '2021-09-01' AND '2021-09-
 SELECT 
     COUNT(li.product_id),
     li.product_id,
-    p.name
+    p.name,
+    row_number() OVER (ORDER BY COUNT(li.product_id) DESC) as id
 FROM
     dubsapi_lineitem li
 JOIN
