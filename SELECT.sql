@@ -23,9 +23,10 @@ JOIN
     dubsapi_topping t ON lit.topping_id = t.id
 
 
---DAILY SALES--
+--DAILY SALES
 SELECT
     o.created_date,
+    
     sum(p.price) AS total_sales
 FROM
     dubsapi_lineitem li
@@ -105,3 +106,7 @@ GROUP BY
 -- HAVING
 --     topping_id = 2
 
+SELECT
+    *
+FROM
+    dubsapi_order
