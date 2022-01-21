@@ -105,7 +105,7 @@ def dailySales(request):
         query="""
         SELECT
             o.created_date,
-
+            o.id,
             sum(p.price) AS total_sales
         FROM
             dubsapi_lineitem li
@@ -115,7 +115,7 @@ def dailySales(request):
             dubsapi_product p ON p.id = li.product_id
         JOIN
             dubsapi_customer c ON c.id = o.customer_id
-        GROUP BY o.created_date
+        GROUP BY o.created_date, o.id
         """
         cursor.execute(query)
         row = dictfetchall(cursor)
