@@ -1,0 +1,1 @@
+web: gunicorn dubs.wsgi --log-file -

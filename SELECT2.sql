@@ -1,19 +1,7 @@
--- ALL TIME TOTAL SALES
-SELECT
-    sum(p.price) AS total_sales
-FROM
-    dubsapi_lineitem li
-JOIN
-    dubsapi_order o ON o.id = li.order_id 
-JOIN
-    dubsapi_product p ON p.id = li.product_id
-JOIN
-    dubsapi_customer c ON c.id = o.customer_id
-
---DAILY SALES
 SELECT
     o.created_date,
-    sum(p.price) AS total_sales
+    sum(p.price) AS total_sales,
+    row_number() OVER (ORDER BY o.created_date) as id
 FROM
     dubsapi_lineitem li
 JOIN
@@ -24,8 +12,10 @@ JOIN
     dubsapi_customer c ON c.id = o.customer_id
 GROUP BY o.created_date
 
--- WEEKLY / MONTHLY SALES
-SELECT
+SELECT 
+    row_number() OVER (ORDER BY o.created_date) as id
+FROM
+    (SELECT
     o.created_date,
     sum(p.price) AS total_sales
 FROM
@@ -36,6 +26,7 @@ JOIN
     dubsapi_product p ON p.id = li.product_id
 JOIN
     dubsapi_customer c ON c.id = o.customer_id
-GROUP BY o.created_date HAVING o.created_date BETWEEN '2021-09-01' AND '2021-09-31'
+GROUP BY o.created_date)
 
-DELETE FROM dubsapi_order WHERE id=15;
+
+

@@ -4,20 +4,12 @@
         "pk": 1,
         "fields": {
             "phone_number": "987-654-3210",
-            "user_id": 1
-        }
-    },
-    {
-        "model": "dubsapi.customer",
-        "pk": 2,
-        "fields": {
-            "phone_number": "987-654-3210",
             "user_id": 2
         }
     },
     {
         "model": "dubsapi.customer",
-        "pk": 3,
+        "pk": 2,
         "fields": {
             "phone_number": "987-654-3210",
             "user_id": 3

@@ -35,13 +35,14 @@ def productSales(request):
         SELECT 
             COUNT(li.product_id) as total_number_sold,
             li.product_id,
-            p.name
+            p.name,
+            row_number() OVER (ORDER BY COUNT(li.product_id) DESC) as id
         FROM
             dubsapi_lineitem li
         JOIN
             dubsapi_product p ON p.id = li.product_id
         GROUP BY 
-            product_id
+            product_id, p.name
         """
         cursor.execute(query)
         row = dictfetchall(cursor)
@@ -64,7 +65,7 @@ def singleProductSales(request, id):
         JOIN
             dubsapi_product p ON p.id = li.product_id
         GROUP BY 
-            product_id 
+            product_id, p.name
         HAVING 
             product_id = %s
         """
@@ -83,13 +84,14 @@ def toppingSales(request):
         SELECT 
             COUNT(lit.topping_id) AS topping_count,
             lit.topping_id,
-            t.name
+            t.name,
+            row_number() OVER (ORDER BY COUNT(lit.topping_id) DESC) as id
         FROM
             dubsapi_lineitemtopping lit
         JOIN
             dubsapi_topping t ON t.id = lit.topping_id
         GROUP BY 
-            topping_id
+            topping_id, t.name
         """
         cursor.execute(query)
         row = dictfetchall(cursor)
@@ -105,7 +107,8 @@ def dailySales(request):
         query="""
         SELECT
             o.created_date,
-            sum(p.price) AS total_sales
+            sum(p.price) AS total_sales,
+            row_number() OVER (ORDER BY o.created_date) as id
         FROM
             dubsapi_lineitem li
         JOIN
